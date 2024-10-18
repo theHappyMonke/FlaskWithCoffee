@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block header %} Home {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Email: {{ user.email }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ user.first_name }}, {{ user.last_name }}</h6>
+    <p class="card-text">Logged in as {{ user.type }}</p>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
